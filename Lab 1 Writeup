@@ -1,0 +1,6 @@
+Q1: 
+	The issue with this design is that inheritance is used for DataStandardizer.
+	if you make any changes to the DataStandardizer class, you may find unexpected behavior in subclasses. Also, using DataStandardizer as the google format is a little misleading for someone learning the code.
+Q2:
+	if someone wants to just override something in the heirachy of DataStandardizer, it may depend on the specific implimentation of that superclass. If you use the google class to impliment the microsoft class, then google changes their format, your microsoft will no longer work.
+Q3.

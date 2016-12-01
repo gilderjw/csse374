@@ -1,0 +1,5 @@
+Q1:
+	you have to make a new case for each new file type
+	when you have to add a new file type, you have to go back into that huge function
+	you cannot launch programs in a different way with having some major spaghetti code
+	
