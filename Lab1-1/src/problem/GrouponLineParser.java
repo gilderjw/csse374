@@ -3,20 +3,18 @@ package problem;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AmazonLineParser implements ILineParser{
+public class GrouponLineParser implements ILineParser {
 
 	@Override
 	public String parse(String line) {
-		Pattern p = Pattern.compile("(.*?) ttl (.*?), (.*?) ttl (.*)");
+		Pattern p = Pattern.compile("(.*?)\\s+(.*)");
 		Matcher m = p.matcher(line);
 
 		if(m.find()){
-			String s =  m.group(1) + " : " + m.group(2) + "\n" +
-					m.group(3) + " : " + m.group(4);
+			String s =  m.group(1) + " : " + m.group(2);
 
 			return s;
 		}
 		return null;
 	}
-
 }

@@ -3,11 +3,13 @@ package problem;
 public class MicrosoftLineParser implements ILineParser {
 	@Override
 	public String parse(String line) {
-		StringBuffer buffer = new StringBuffer();
+		String s = "";
 		String[] fields = line.split(",");
-		buffer.append(fields[0].trim());
-		buffer.append(" : ");
-		buffer.append(fields[1].trim());
-		return null;
+
+		s += (fields[0].trim());
+		s += (" : ");
+		s += (fields[1].trim());
+
+		return s;
 	}
 }
