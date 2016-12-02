@@ -17,7 +17,7 @@ public class AppLauncherApplication {
 	static DirectoryEvent textEvent = new DirectoryEvent("add", Paths.get(srcTxtFile), null);
 	static DirectoryEvent htmlEvent = new DirectoryEvent("add", Paths.get(srcHtmlFile), null);
 	static DirectoryEvent exeEvent = new DirectoryEvent("add", Paths.get(srcExeFile), null);
-
+	
 	public static void main(String[] args) throws IOException {
 		//create monitor service
 		IDirectoryMonitorService service = new DirectoryMonitorService(Paths.get(baseDir));
@@ -31,10 +31,19 @@ public class AppLauncherApplication {
 		ProcessRunner dRunner =  new DataFileRunner();
 		ProcessRunner hRunner = new HtmlFileRunner();
 
+		//runners for linux
+		ProcessRunner eRunnerL = new ExecutableFileRunnerLinux();
+		ProcessRunner dRunnerL =  new DataFileRunnerLinux();
+		ProcessRunner hRunnerL = new HtmlFileRunnerLinux();
+		
 		// subscribe the process runners to the application launcher
-		launcher.addRunner(".exe", eRunner);
-		launcher.addRunner(".txt", dRunner);
-		launcher.addRunner(".html", hRunner);
+//		launcher.addRunner(".exe", eRunner);
+//		launcher.addRunner(".txt", dRunner);
+//		launcher.addRunner(".html", hRunner);
+		// subscribe the process runners to the application launcher
+		launcher.addRunner(".exe", eRunnerL);
+		launcher.addRunner(".txt", dRunnerL);
+		launcher.addRunner(".html", hRunnerL);
 
 		// subscribe the application launcher and logger to the directory monitoring service
 		service.addListener(launcher);
