@@ -1,0 +1,9 @@
+q1
+	My strategy is to decorate the inputStream and outputStream to change the text before passing it on
+q2
+	It favors composition over inheritence because it uses an input and output string from somewhere else
+	It also uses programming to an interface since the way it read does not matter as long as they extend InputStream
+	It seperates what changes from what stays the same because to change how files are stored, you just need to change the stream code
+q3
+	it is at least a good framework when it comes to saving and reading. the rest is a black box so it is not well designed for me with what I have right now
+	
