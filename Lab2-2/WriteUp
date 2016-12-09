@@ -1,0 +1,33 @@
+C
+1. DigitalBox line 17 & 18
+a. What is the name of the class, method, and the line number range that contains the violation ?
+DigitalBox constructor line 17 - 18
+b. In your own words, describe how the selected code is violating the Law of Demeter.
+It does not actually care about the dataLine, only about it's internal list of recievers
+c. Show how you would rewrite the code so it doesn't violate the Law of Demeter.
+Make an add method in DataLine so that the dataline is the only thing that cares about it's internal list
+d. What design tradeoffs did you make in the coupling vs cohesion battle in your solution? Hint: you made tradeoffs
+The cohesion is better now since it it more clear who cares about what
+The coupling is worse since there are more surfaces between the two for communication
+2. MpegEncoder recieved
+a. What is the name of the class, method, and the line number range that contains the violation?
+MpegEncoder.recieved() lines 13-20
+b. In your own words, describe how the selected code is violating the Law of Demeter.
+it just calls d.getContent() and then just manipulates the array returned
+c. Show how you would rewrite the code so it doesn't violate the Law of Demeter.
+If the function just took in a char array, it would not even have to know what Data had a getContent() method
+d. What design tradeoffs did you make in the coupling vs cohesion battle in your solution ? Hint : you made tradeoffs
+Coupling is better since MpegEncoder no longer needs to about getContent()
+Cohesion is worse since the call to getContent() has to happen somewhere else
+  2. AviEncoder recieved
+  a. What is the name of the class, method, and the line number range that contains the violation ?
+  AviEncoder.recieved() lines 13 - 26
+  b. In your own words, describe how the selected code is violating the Law of Demeter.
+  it just calls d.getContent() and then just manipulates the array returned
+  c. Show how you would rewrite the code so it doesn't violate the Law of Demeter.
+  If the function just took in a char array, it would not even have to know what Data had a getContent() method
+  d. What design tradeoffs did you make in the coupling vs cohesion battle in your solution? Hint: you made tradeoffs
+  Coupling is better since AviEncoder no longer needs to about getContent()
+  Cohesion is worse since the call to getContent() has to happen somewhere else
+
+  B
