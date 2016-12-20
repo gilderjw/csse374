@@ -40,7 +40,6 @@ public interface IComponent {
 	 * @param g The {@link Graphics2D} object to be used for rendering the component herarchy.
 	 */
 	public void draw(Graphics2D g);
-
 	/**
 	 * This method should be overriden by a concrete component to specify its drawing
 	 * logic. This method will be called internally by the {@link #draw(Graphics2D)}
@@ -73,6 +72,8 @@ public interface IComponent {
 	public IComponent getParent();
 
 	public IRenderer getRenderer();
+
+	public String getText();
 
 	/**
 	 * Sets the new bound {@link Rectangle} of this component.

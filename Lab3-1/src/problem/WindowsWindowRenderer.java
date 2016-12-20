@@ -15,13 +15,14 @@ public class WindowsWindowRenderer extends AbstractRenderer {
 	protected JFrame frame;
 	protected JPanel panel;
 
-	public WindowsWindowRenderer(){
-		this("This is a windows window", new Rectangle(200, 400, 400, 600));
+	public WindowsWindowRenderer(IComponent c){
+		this(c.getText(), new Rectangle(200, 400, 400, 600), c);
+
 	}
 
-	public WindowsWindowRenderer(String title, Rectangle bound) {
-		super();
-		this.bound = bound;
+	public WindowsWindowRenderer(String title, Rectangle bound, IComponent c) {
+		super(c);
+		this.bound = c.getBounds();
 
 		if(title == null) {
 			this.title = "";

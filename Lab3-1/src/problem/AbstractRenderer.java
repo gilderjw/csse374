@@ -11,6 +11,10 @@ public abstract class AbstractRenderer implements IRenderer {
 
 	IComponent cmpl;
 
+	public AbstractRenderer(IComponent cmpl) {
+		this.cmpl = cmpl;
+	}
+
 	protected Rectangle getBounds(){
 		return this.bound;
 	}

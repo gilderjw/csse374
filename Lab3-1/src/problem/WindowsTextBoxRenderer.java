@@ -12,6 +12,10 @@ public class WindowsTextBoxRenderer extends AbstractRenderer{
 
 	private String text;
 
+	public WindowsTextBoxRenderer(IComponent cmpl) {
+		super(cmpl);
+	}
+
 	@Override
 	public IComponent getComponenet() {
 

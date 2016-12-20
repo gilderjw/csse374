@@ -17,13 +17,13 @@ public abstract class AbstractComponent implements IComponent {
 	private IComponent parent;
 	private List<IComponent> components;
 	private Rectangle bound;
+	private String text;
 	public IRenderer renderer;
 
 	public AbstractComponent() {
 		this(null, null);
 	}
 
-	//
 	public AbstractComponent(IComponent parent, Rectangle bound) {
 		this.parent = parent;
 		if(parent != null) {
@@ -37,10 +37,10 @@ public abstract class AbstractComponent implements IComponent {
 			this.bound = IComponent.DEFAULT_BOUNDS;
 		}
 	}
+
 	public AbstractComponent(Rectangle bound) {
 		this(null, bound);
 	}
-
 	@Override
 	public final boolean addChild(IComponent c) {
 		if(this.components.contains(c)) {
@@ -67,11 +67,11 @@ public abstract class AbstractComponent implements IComponent {
 		}
 	}
 
-
 	@Override
 	public void drawComponent(Graphics2D g){
 		this.renderer.render(g);
 	}
+
 
 	@Override
 	public void fireUpdate() {
@@ -98,6 +98,11 @@ public abstract class AbstractComponent implements IComponent {
 	@Override
 	public IRenderer getRenderer() {
 		return this.renderer;
+	}
+
+	@Override
+	public String getText(){
+		return this.text;
 	}
 	@Override
 	public final void setBounds(Rectangle bound) {

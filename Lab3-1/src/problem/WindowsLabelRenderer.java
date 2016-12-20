@@ -9,16 +9,17 @@ public class WindowsLabelRenderer extends AbstractRenderer {
 
 	private String s;
 
-	public WindowsLabelRenderer(){
-		this("This is a windows label");
+	public WindowsLabelRenderer(IComponent c){
+		this("This is a windows label", c);
 	}
 
-	public WindowsLabelRenderer(String text) {
-		this(text, new Rectangle(100, 200, 50, 100));
+	public WindowsLabelRenderer(String text, IComponent c) {
+		this(text, new Rectangle(100, 200, 50, 100), c);
 
 	}
 
-	public WindowsLabelRenderer(String text, Rectangle bound) {
+	public WindowsLabelRenderer(String text, Rectangle bound, IComponent c) {
+		super(c);
 		this.s = text;
 		this.bound = bound;
 	}
@@ -31,7 +32,7 @@ public class WindowsLabelRenderer extends AbstractRenderer {
 
 	@Override
 	public void render(Graphics2D g) {
-		Rectangle bound = this.getBounds();
+		Rectangle bound = this.cmpl.getBounds();
 
 		// Draw the title
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 12));

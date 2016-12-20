@@ -52,7 +52,6 @@ public class Window extends AbstractComponent {
 		};
 		this.frame.setContentPane(this.panel);
 	}
-
 	@Override
 	public void drawComponent(Graphics2D g) {
 		this.renderer.render(g);
@@ -98,6 +97,11 @@ public class Window extends AbstractComponent {
 	@Override
 	public final void fireUpdate() {
 		this.panel.repaint();
+	}
+
+	@Override
+	public String getText() {
+		return this.title;
 	}
 
 	public void show() {

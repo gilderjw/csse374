@@ -6,7 +6,7 @@ public class WindowsRendererFactory extends AbstractRendererFactory{
 	protected void populate() {
 		//		this.put(Button.class, WindowsButtonRenderer.class);
 		this.put(Label.class, WindowsLabelRenderer.class);
-		//		this.put(TextBox.class, WindowsTextBoxRenderer.class);
+		this.put(TextBox.class, WindowsTextBoxRenderer.class);
 		this.put(Window.class, WindowsWindowRenderer.class);
 	}
 

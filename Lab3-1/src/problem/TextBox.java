@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.geom.Rectangle2D;
-import java.util.List;
 
 /**
  * This class provides the support for the text box widget.
@@ -41,17 +40,6 @@ public class TextBox extends AbstractComponent {
 		this(null, text, bound);
 	}
 
-	@Override
-	public boolean addChild(IComponent c) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void draw(Graphics2D g) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public void drawComponent(Graphics2D g) {
@@ -112,41 +100,11 @@ public class TextBox extends AbstractComponent {
 
 	}
 
-	@Override
-	public Rectangle getBounds() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<IComponent> getChildren() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public IComponent getParent() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public IRenderer getRenderer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	/**
 	 * Gets the text in the label.
 	 */
 	public String getText() {
 		return this.text;
-	}
-
-	@Override
-	public void setBounds(Rectangle r) {
-		// TODO Auto-generated method stub
-
 	}
 
 	/**
