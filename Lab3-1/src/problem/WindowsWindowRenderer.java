@@ -9,17 +9,18 @@ import java.awt.Rectangle;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class LinuxWindowRenderer extends AbstractRenderer{
+public class WindowsWindowRenderer extends AbstractRenderer {
 
-	public static final int V_SPACE = 3;
-	public static final int H_SPACE = 3;
-	public static final int TITLE_HEIGHT = 25;
-	private Rectangle bound;
-	private String title;
-	private JFrame frame;
-	private JPanel panel;
+	protected String title;
+	protected JFrame frame;
+	protected JPanel panel;
 
-	public LinuxWindowRenderer(String title, Rectangle bound) {
+	public WindowsWindowRenderer(){
+		this("This is a windows window", new Rectangle(200, 400, 400, 600));
+	}
+
+	public WindowsWindowRenderer(String title, Rectangle bound) {
+		super();
 		this.bound = bound;
 
 		if(title == null) {
@@ -35,14 +36,16 @@ public class LinuxWindowRenderer extends AbstractRenderer{
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
-				LinuxWindowRenderer.this.render((Graphics2D) g);
+				WindowsWindowRenderer.this.render((Graphics2D) g);
 			}
 		};
 		this.frame.setContentPane(this.panel);
 	}
 
-	private Rectangle getBounds(){
-		return this.bound;
+	@Override
+	public IComponent getComponenet() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override

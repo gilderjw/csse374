@@ -1,5 +1,8 @@
 package problem;
 
-public interface IRenderer {
+import java.awt.Graphics2D;
 
+public interface IRenderer {
+	public IComponent getComponenet();
+	public void render(Graphics2D g);
 }
