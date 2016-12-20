@@ -17,21 +17,21 @@ public class DrawingApp {
 		// Also try this configuration and comment out previous two lines
 		//		Configuration.setTestMode(false);
 
-
-
 		Window window = new Window("This is a Window", new Rectangle(200,200, 500, 500));
 		Label label = new Label(window, "This is a label", new Rectangle(5,30, 200, 25));
 		TextBox text = new TextBox("This is a textbox", new Rectangle(300,50, 100, 25));
-
+		Button but = new Button("This is a button", new Rectangle(300, 300, 100, 20));
 
 		IRendererFactory fac = Configuration.getRendererFactory();
 
 		IRenderer Rwindow = fac.createRenderer(window);
 		IRenderer Rlabel = fac.createRenderer(label);
 		IRenderer RTextBox = fac.createRenderer(text);
+		IRenderer Rbut = fac.createRenderer(but);
 
 		window.setRenderer(Rwindow);
 		label.setRenderer(Rlabel);
+		but.setRenderer(Rbut);
 
 		window.addChild(label);
 
@@ -45,5 +45,6 @@ public class DrawingApp {
 		text.setRenderer(RTextBox);
 		window.addChild(text);
 
+		window.addChild(but);
 	}
 }

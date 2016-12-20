@@ -14,13 +14,9 @@ public class WindowsTextBoxRenderer extends AbstractRenderer{
 
 	public WindowsTextBoxRenderer(IComponent cmpl) {
 		super(cmpl);
+		this.text = cmpl.getText();
 	}
 
-	@Override
-	public IComponent getComponenet() {
-
-		return null;
-	}
 
 	@Override
 	public void render(Graphics2D g) {

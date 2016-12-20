@@ -18,6 +18,9 @@ public class Configuration {
 	public static final String WINDOWS = "windows";
 
 	public static final String LINUX = "ubuntu";
+
+	public static final String OSX = "osx";
+
 	private static boolean test = false;
 	private static String defaultOS = LINUX;
 

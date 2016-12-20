@@ -44,12 +44,6 @@ public class WindowsWindowRenderer extends AbstractRenderer {
 	}
 
 	@Override
-	public IComponent getComponenet() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void render(Graphics2D g) {
 		// Draw the border
 		g.setColor(Color.gray);

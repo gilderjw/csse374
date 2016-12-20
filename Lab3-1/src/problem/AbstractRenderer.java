@@ -13,11 +13,14 @@ public abstract class AbstractRenderer implements IRenderer {
 
 	public AbstractRenderer(IComponent cmpl) {
 		this.cmpl = cmpl;
+		this.bound = cmpl.getBounds();
 	}
 
 	protected Rectangle getBounds(){
 		return this.bound;
 	}
+
+	@Override
 	public IComponent getComponent(){
 		return this.cmpl;
 	}
