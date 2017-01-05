@@ -8,17 +8,18 @@ import problem.renderers.windows.WindowRendererFactory;
 
 public class RendererAllOSFactory extends AbstractFactory {
 	public RendererAllOSFactory() {
-		this.map("linux", LinuxRendererFactory.class);
-		this.map("windows", WindowRendererFactory.class);
+		this.map("lin", LinuxRendererFactory.class);
+		this.map("win", WindowRendererFactory.class);
 		this.map("mac", OSXRendererFactory.class);
 	}
 
 	@Override
 	protected <T> T createSpecial(Class<T> clazz, String selector) throws Exception {
 		// Check whether we are asked to create a IRenderer type or its subtype
-		if(!IRenderer.class.isAssignableFrom(clazz))
+		if(!IRenderer.class.isAssignableFrom(clazz)) {
 			return null;
-		
+		}
+
 		Configuration config = Configuration.getInstance();
 		// Let's get the correct factory for current OS, which we mapped in the constructor
 		IFactory osFactory = this.create(IFactory.class, config.getOS());

@@ -1,5 +1,7 @@
 package problem.renderers;
 
+import java.util.Scanner;
+
 public class Configuration {
 	private static volatile Configuration config;
 
@@ -13,34 +15,40 @@ public class Configuration {
 		}
 		return config;
 	}
-	
+
 	private boolean test = true;
-	private String defaultOS = "linux";
-	
+	private String defaultOS = "lin";
+
 	private Configuration() {
-		
-	}
-	
-	public String getDefaultOS() {
-		return defaultOS;
+		if(this.test) {
+			System.out.println("Which os are you using?");
+			Scanner scan = new Scanner(System.in);
+			this.defaultOS = scan.nextLine().substring(0, 3).toLowerCase();
+			scan.close();
+		}
 	}
 
-	public boolean isTest() {
-		return test;
-	}
-	
-	public void setDefaultOS(String os) {
-		defaultOS = os;
-	}
-	
-	public void setTest(boolean t) {
-		test = t;
+	public String getDefaultOS() {
+		return this.defaultOS;
 	}
 
 	public String getOS() {
-		if(test)
-			return defaultOS.toLowerCase();
-		else
-			return System.getProperty("os.name").toLowerCase();
+		if(this.test) {
+			return this.defaultOS.toLowerCase();
+		} else {
+			return System.getProperty("os.name").substring(0,3).toLowerCase();
+		}
+	}
+
+	public boolean isTest() {
+		return this.test;
+	}
+
+	public void setDefaultOS(String os) {
+		this.defaultOS = os;
+	}
+
+	public void setTest(boolean t) {
+		this.test = t;
 	}
 }
