@@ -1,0 +1,8 @@
+package edu.rosehulman.csse374.pizza.ingredients;
+
+public class FrozenClams implements Clams {
+
+	public String toString() {
+		return "Frozen Clams from Chesapeake Bay";
+	}
+}
