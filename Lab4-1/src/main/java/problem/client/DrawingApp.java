@@ -20,7 +20,20 @@ public class DrawingApp implements IApplication {
 		configurations.addExclusion("java", "javax");
 
 		IWiredFramework core = WiredFramework.getInstance();
-		core.boot(DrawingApp.class, args);
+
+		if ((args.length > 0) && (args[0].equals("test"))){
+			Configuration.getInstance().setDefaultOS("win");
+			core.boot(DrawingApp.class, args);
+
+			Configuration.getInstance().setDefaultOS("mac");
+			core.boot(DrawingApp.class, args);
+
+			Configuration.getInstance().setDefaultOS("lin");
+			core.boot(DrawingApp.class, args);
+		} else {
+			Configuration.getInstance();
+			core.boot(DrawingApp.class, args);
+		}
 	}
 	@Autowired Window window;
 	@Autowired Label label;
@@ -30,7 +43,7 @@ public class DrawingApp implements IApplication {
 
 	@Override
 	public void execute(String... args) throws Exception {
-		Configuration.getInstance();
+
 		this.window.setTitle("This is a Window");
 		this.window.setBounds(new Rectangle(200,200, 500, 500));
 		this.window.show();
@@ -51,5 +64,6 @@ public class DrawingApp implements IApplication {
 		this.button.setText("This is a button");
 		this.button.setBounds(new Rectangle(140,400, 100, 25));
 		this.window.addChild(this.button);
+
 	}
 }

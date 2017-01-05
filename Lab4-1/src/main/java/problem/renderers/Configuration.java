@@ -1,7 +1,5 @@
 package problem.renderers;
 
-import java.util.Scanner;
-
 public class Configuration {
 	private static volatile Configuration config;
 
@@ -21,11 +19,9 @@ public class Configuration {
 
 	private Configuration() {
 		if(this.test) {
-			System.out.println("Which os are you using?");
-			Scanner scan = new Scanner(System.in);
-			this.defaultOS = scan.nextLine().substring(0, 3).toLowerCase();
-			scan.close();
+			this.setDefaultOS(System.getProperty("os.name").substring(0,3).toLowerCase());
 		}
+		//		return System.getProperty("os.name").substring(0,3).toLowerCase();	//
 	}
 
 	public String getDefaultOS() {
@@ -33,11 +29,12 @@ public class Configuration {
 	}
 
 	public String getOS() {
-		if(this.test) {
-			return this.defaultOS.toLowerCase();
-		} else {
-			return System.getProperty("os.name").substring(0,3).toLowerCase();
-		}
+		return this.defaultOS;
+		//		if(this.test) {
+		//			return this.defaultOS.toLowerCase();
+		//		} else {
+		//		return System.getProperty("os.name").substring(0,3).toLowerCase();
+		//		}
 	}
 
 	public boolean isTest() {
