@@ -2,13 +2,13 @@ package problem.blueberrymuffin;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingDeque;
 
 public class MuffinThreadExecutor implements Executor {
 	private static MuffinThreadExecutor instance;
-	private Queue<Runnable> allJobs;
+	private BlockingQueue<Runnable> allJobs;
 	private List<RealThread> workerThreads;
 
 	public static MuffinThreadExecutor getInstance(){
@@ -27,13 +27,28 @@ public class MuffinThreadExecutor implements Executor {
 	@Override
 	public void execute(Runnable r){
 		this.allJobs.add(r);
-		this.getNextJob();
+		try {
+			this.runNextJob(null);
+		} catch (InterruptedException e) {
+			System.out.println("interrupted");
+		}
 	}
 
-	public synchronized Runnable getNextJob() {
-		if (!this.workerThreads.isEmpty()){
-
+	public synchronized Runnable runNextJob(Runnable r) throws InterruptedException {
+		if(this.workerThreads.size() >= 3){
+			return null;
 		}
+
+		if(r != null) {
+			this.workerThreads.remove(r);
+		}
+
+
+		RealThread tmp = new RealThread(this.allJobs.take()); //blocks
+
+		this.workerThreads.add(tmp);
+		tmp.start();
+
 		return null;
 	}
 }

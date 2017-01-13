@@ -1,22 +1,26 @@
 package problem.blueberrymuffin;
 
-import java.util.concurrent.Executor;
-
 public class VirtualThread implements Runnable{
-	private Executor MuffinThreadExecuter;
+	private MuffinThreadExecutor MuffinThreadExecuter;
 	private Runnable runnable;
 
-	public VirtualThread(MuffinThreadExecutor me, Runnable r){
+	public VirtualThread(Runnable r){
 		this.runnable = r;
-		this.MuffinThreadExecuter = me;
+		this.MuffinThreadExecuter = MuffinThreadExecutor.getInstance();
 	}
 
 	@Override
 	public void run() {
-		this.MuffinThreadExecuter.execute(this);
+		this.runnable.run();
+		try {
+			this.MuffinThreadExecuter.runNextJob(this);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 	}
 
-	public void start(){
-		this.run();
+	public void start() throws InterruptedException{
+		this.MuffinThreadExecuter.execute(this);
 	}
 }
