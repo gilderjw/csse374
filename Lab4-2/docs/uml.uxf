@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>110</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>FIXME
+--
+
+--
++ main(String[] args) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>260</y>
+      <w>170</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>RealThread
+--
+- Thread underlying
+--
+start() : void
+getTotalThreads() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>190</y>
+      <w>40</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>20.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

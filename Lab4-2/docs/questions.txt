@@ -1,0 +1,2 @@
+Q1: The program still crashes because the main thread is also running
+Q2: The java executor interface is the invoker role
