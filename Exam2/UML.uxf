@@ -431,9 +431,11 @@ public class NYPizzaStore extends PizzaStore {
 }
 
 PrintDecorator extends PizzaIngredientFactoryDecorator{
-	this.setDoughCommand(...)
-	this.setSauceCommand(...)
-	...
+	public PrintDecorator(){
+		this.setDoughCommand(...)
+		this.setSauceCommand(...)
+		...
+	}
 	
 }</panel_attributes>
     <additional_attributes/>
