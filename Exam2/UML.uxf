@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>15</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1215</x>
+      <y>1575</y>
+      <w>555</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+PizzaIngredientFactory
+--
+
+--
++ createDough : Dough 
++ createSauce : Sauce 
++ createCheese : Cheese 
++ createVeggies : Veggies[] 
++ createPepperoni : Pepperoni 
++ createClam : Clams </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>0</y>
+      <w>615</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+PizzaStore
+--
+
+--
+# abstract createPizza(String item) : Pizza
++ orderPizza(String type) : Pizza</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>870</y>
+      <w>540</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>ChicagePizzaStore
+--
+Pizza pizza
+PizzaIngredientFactory ingredientF+ createDough : Dough 
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2565</x>
+      <y>1095</y>
+      <w>540</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>NewYorkPizzaStore
+--
+Pizza pizza
+PizzaIngredientFactory ingredientF+ createDough : Dough 
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1755</x>
+      <y>255</y>
+      <w>1035</w>
+      <h>870</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;670.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>255</y>
+      <w>1095</w>
+      <h>645</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>710.0;10.0;10.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1755</x>
+      <y>1230</y>
+      <w>840</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;340.0;540.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>1020</y>
+      <w>720</w>
+      <h>735</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>460.0;470.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>2040</y>
+      <w>480</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>NYPizzaIngredientFactory
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1545</x>
+      <y>2040</y>
+      <w>480</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>ChicagoIngredientFactory
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1575</x>
+      <y>1860</y>
+      <w>165</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1200</x>
+      <y>1860</y>
+      <w>165</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1800</x>
+      <y>2400</y>
+      <w>495</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>All of the ingredients used by Chicago</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1800</x>
+      <y>2235</y>
+      <w>270</w>
+      <h>195</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>160.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>645</x>
+      <y>2385</y>
+      <w>495</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>All of the ingredients used by NY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>2235</y>
+      <w>270</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>10.0;100.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>555</y>
+      <w>555</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Pizza
+--
+String name;
+Dough dough;
+Sauce sauce;
+Veggies veggies[];
+Cheese cheese;
+Pepperoni pepperoni;
+Clams clam;
+--
+abstract prepare : void
+bake : void
+cut : void
+box : void
+setName : String
+getName : String
++ toString : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1800</x>
+      <y>690</y>
+      <w>795</w>
+      <h>465</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;510.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>675</y>
+      <w>765</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>490.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>1065</y>
+      <w>570</w>
+      <h>255</h>
+    </coordinates>
+    <panel_attributes>CheezePizza
+--
+PizzaIngredientFactory ingredientFactory
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>1065</y>
+      <w>570</w>
+      <h>255</h>
+    </coordinates>
+    <panel_attributes>VeggiePizza
+--
+PizzaIngredientFactory ingredientFactory
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1620</x>
+      <y>960</y>
+      <w>180</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1200</x>
+      <y>960</y>
+      <w>180</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1635</x>
+      <y>1305</y>
+      <w>255</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>1305</y>
+      <w>150</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2220</x>
+      <y>1695</y>
+      <w>510</w>
+      <h>285</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+PizzaIngredientFactoryDecorator
+--
+PizzaIngredientFacory inner
+--
++ setDoughCommand : void
++ setSauceCommand : void
++ setCheeseCommand : void
++ setVeggieCommand : void
++ setPepperoniCommand: void
++ setClamCommand : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1755</x>
+      <y>1770</y>
+      <w>495</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1755</x>
+      <y>1815</y>
+      <w>495</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2355</x>
+      <y>2130</y>
+      <w>345</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>PrintDecorator
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2490</x>
+      <y>1965</y>
+      <w>60</w>
+      <h>195</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>3135</x>
+      <y>1635</y>
+      <w>615</w>
+      <h>435</h>
+    </coordinates>
+    <panel_attributes>main {
+	PizzaStore nyStore = new NYPizzaStoreWithRobot();
+	Pizza pizza = nyStore.orderPizza("cheese");
+} 
+
+NyPizzaStoreWithRobot extends NyPizzaStore{
+	this.ingredientFactory = new PrintDecorator(new NYIngredientFactory)
+	
+}
+
+PrintDecorator extends PizzaIngredientFactoryDecorator{
+	this.setDoughCommand(...)
+	this.setSauceCommand(...)
+	...
+	
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
