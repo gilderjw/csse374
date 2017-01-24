@@ -1,0 +1,21 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - gradle build
+  tags:
+    - linux
+    - java
+
+deploy:
+  stage: deploy
+  script:
+    - gradle publish
+  tags:
+    - linux
+    - java
+  only:
+    - tags
