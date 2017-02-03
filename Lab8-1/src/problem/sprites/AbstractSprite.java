@@ -3,6 +3,8 @@ package problem.sprites;
 import java.awt.Dimension;
 import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 // TODO: Add support for complex (composite) sprites
 public abstract class AbstractSprite implements ISprite {
@@ -11,9 +13,12 @@ public abstract class AbstractSprite implements ISprite {
 	protected Shape shape;
 	protected SpriteFactory factory;
 	
+	protected ArrayList<ISprite> children;
+	
 
 	// Subclasses need to chain this constructor
 	public AbstractSprite(double x, double y, double width, double height) {
+		this.children = new ArrayList<ISprite>();
 		this.factory = SpriteFactory.getInstance();
 		this.dx = factory.getDX();
 		this.dy = factory.getDY();
@@ -41,7 +46,8 @@ public abstract class AbstractSprite implements ISprite {
 	public final Shape getShape() {
 		return this.shape;
 	}
-	
+
 	@Override
 	public abstract void move(Dimension space);
+	
 }

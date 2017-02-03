@@ -3,15 +3,17 @@ package problem.graphics;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Shape;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JPanel;
 
 import problem.sprites.ISprite;
+import problem.sprites.NullIterator;
 import problem.sprites.SpriteFactory;
+import problem.sprites.SpriteIterator;
 
 public class AnimationPanel extends JPanel {
 	private static final long serialVersionUID = -9141525646098105526L;
@@ -55,8 +57,10 @@ public class AnimationPanel extends JPanel {
 					long start = System.currentTimeMillis();
 
 					synchronized(sprites) {
-						for(ISprite s: sprites) {
-							s.move(getSize());
+						SpriteIterator spr = new SpriteIterator(sprites.iterator());
+						
+						while(spr.hasNext()){
+							spr.next().move(getSize());
 						}
 					}
 					repaint();
@@ -81,19 +85,30 @@ public class AnimationPanel extends JPanel {
 		sprites.clear();
 		repaint();
 	}
-
+	
+	void drawOnlyLeaves(Graphics2D g, ISprite s){
+		Iterator<ISprite> itr = s.iterator();
+		if(itr instanceof NullIterator){
+			g.draw(s.getShape());
+		} else {
+			while(itr.hasNext())
+				drawOnlyLeaves(g, itr.next());
+		}
+	}
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		
-		// TODO: Handle rendering complex shapes here
 		Graphics2D graphics = (Graphics2D)g;
 		synchronized(sprites) {
-			for(ISprite s: sprites) {
-				Shape shape = s.getShape();
-				if(shape != null)
-					graphics.draw(shape);
-			}
+			sprites.stream().forEach((ISprite s) -> drawOnlyLeaves(graphics, s));
+//			SpriteIterator spr = new SpriteIterator(sprites.iterator());
+//			while(spr.hasNext()){
+//				Shape shape = spr.next().getShape();
+//				if(shape != null){
+//					graphics.draw(shape);
+//				}
+//			}
 		}
 	}
 }

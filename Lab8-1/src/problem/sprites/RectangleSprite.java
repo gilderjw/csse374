@@ -2,6 +2,7 @@ package problem.sprites;
 
 import java.awt.Dimension;
 import java.awt.geom.Rectangle2D;
+import java.util.Iterator;
 
 public class RectangleSprite extends AbstractSprite {
 
@@ -14,5 +15,10 @@ public class RectangleSprite extends AbstractSprite {
 	public void move(Dimension space) {
 		Rectangle2D bounds = this.computeNewBoundsAfterMoving(space);
 		shape = new Rectangle2D.Double(bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight());
+	}
+
+	@Override
+	public Iterator<ISprite> iterator() {
+		return new NullIterator(this);
 	}
 }

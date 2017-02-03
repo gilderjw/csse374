@@ -3,6 +3,7 @@ package problem.sprites;
 import java.awt.Dimension;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
+import java.util.Iterator;
 
 public class CircleSprite extends AbstractSprite {
 
@@ -15,5 +16,10 @@ public class CircleSprite extends AbstractSprite {
 	public void move(Dimension space) {
 		Rectangle2D bounds = this.computeNewBoundsAfterMoving(space);
 		shape = new Ellipse2D.Double(bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight());
+	}
+
+	@Override
+	public Iterator<ISprite> iterator() {
+		return new NullIterator(this);
 	}
 }
