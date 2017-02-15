@@ -1,0 +1,12 @@
+POS	First	Second	Third	Other
+WR1	Andre Johnson	Donte Moncrief	Quan Bray	
+LT	Anthony Castonzo			
+LG	Jack Mewhort	Lance Louis		
+C	Jonotthan Harrison	Khaled Holmes		
+RG	Lance Louis			
+RT	Joe Reitz	Denzelle Good		
+TE	Jack Doyle	Erik Swoope		
+WR2	T.Y. Hilton	Phillip Dorsett		
+QB	Andrew Luck	Matt Hasselbeck	Stephen Morris	Josh Freeman
+TE	Coby Fleener			
+RB	Frank Gore	Dan Herron	Trey Williams	

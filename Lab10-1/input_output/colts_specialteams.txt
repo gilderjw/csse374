@@ -1,0 +1,7 @@
+POS	First	Second	Third	Other
+P	Pat McAfee			
+K	Adam Vinatieri			
+H	Pat McAfee			
+LS	Matt Overton			
+KR	Quan Bray			
+PR	Quan Bray	Phillip Dorsett		

@@ -1,0 +1,12 @@
+POS	First	Second	Third	Other
+DE	Kendall Langford	Earl Okine		
+NT	David Parry			
+DT	Zach Kerr	T.Y. McGill	Kelcy Quarles	
+OLB	Erik Walden	Bjoern Werner	Andy Studebaker	
+ILB	D'Qwell Jackson	Sio Moore		
+ILB	Jerrell Freeman	Amarlo Herrera		
+OLB	Robert Mathis	Trent Cole	Jonathan Newsome	
+LCB	Greg Toler	Jalil Brown		
+SS	Mike Adams	Colt Anderson	Akeem Davis	
+FS	Dwight Lowery	Clayton Geathers	Winston Guy	
+RCB	Vontae Davis	Darius Butler	Tay Glover-Wright	
